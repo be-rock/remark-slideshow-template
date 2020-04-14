@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .remark-container { background-color: black; }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+
+# hello slide 1
+<!-- <div style="display: flex; justify-content: center;"> -->
+    <!-- <img align="middle" src="images/abc.png" style='height: 93%; width: 93%; object-fit: contain'/> -->
+<!-- </div> -->
+
+---
+# slide 2 
+
+```shell 
+$ tree
+.
+├── Dockerfile
+├── README.md
+├── app
+    ├── __init__.py
+    └── main.py```
+
+---
+# the end
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+    <script type="text/javascript">
+      var hljs = remark.highlighter.engine;
+    </script>
+    <script src="terminal.language.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    var slideshow = remark.create({
+        // Set the slideshow display ratio
+        // Default: '4:3'
+        // Alternatives: '16:9', ...
+        ratio: '16:9',
+        // ratio: '4:3',
+        // Navigation options
+        navigation: {
+            // Enable or disable navigating using scroll
+            // Default: true
+            // Alternatives: false
+            scroll: true,
+    
+            // Enable or disable navigation using touch
+            // Default: true
+            // Alternatives: false
+            touch: true,
+    
+            // Enable or disable navigation using click
+            // Default: false
+            // Alternatives: true
+            click: false
+        },
+    
+        // Customize slide number label, either using a format string..
+        slideNumberFormat: 'Slide %current% of %total%',
+        // .. or by using a format function
+        slideNumberFormat: function (current, total) {
+            // return 'Slide ' + current + ' of ' + total;
+            return current + ' / ' + total;
+        },
+    
+        // Enable or disable counting of incremental slides in the slide counting
+        // https://github.com/gnab/remark/wiki/Configuration#highlighting
+        // Alternatives: arta, ascetic, dark, default, far, github, googlecode, idea, ir-black, magula, monokai, rainbow, solarized-dark, solarized-light, sunburst, tomorrow, 
+        // tomorrow-night-blue, tomorrow-night-bright, tomorrow-night, tomorrow-night-eighties, vs, zenburn
+        countIncrementalSlides: true,
+        highlightLanguage: ['bash', 'shell'],
+        highlightStyle: 'monokai',
+        highlightLines: true,
+        highlightSpans: true
+    });
+      // extract the embedded styling from ansi spans
+      var highlighted = document.querySelectorAll("code.terminal span.hljs-ansi");
+      Array.prototype.forEach.call(highlighted, function(next) {
+        next.insertAdjacentHTML("beforebegin", next.textContent);
+        next.parentNode.removeChild(next);
+      });
+    </script>
+    
+  </body>
+</html>
